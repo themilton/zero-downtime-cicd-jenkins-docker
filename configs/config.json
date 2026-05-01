@@ -1,0 +1,9 @@
+{
+  "status": "healthy",
+  "timestamp": "2024-06-14T22:15:03.441Z",
+  "checks": {
+    "database": "ok",
+    "redis": "ok"
+  },
+  "version": "a3f82d1"
+}

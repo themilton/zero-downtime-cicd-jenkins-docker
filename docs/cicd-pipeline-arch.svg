@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" font-family="Consolas, Monaco, monospace">
+  <defs>
+    <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="shadow1">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <rect width="900" height="420" rx="12" fill="url(#bg1)"/>
+  <text x="450" y="35" text-anchor="middle" fill="#94a3b8" font-size="13" font-weight="bold">CI/CD PIPELINE ARCHITECTURE</text>
+  <line x1="50" y1="48" x2="850" y2="48" stroke="#334155" stroke-width="1"/>
+
+  <!-- Developer -->
+  <rect x="30" y="75" width="120" height="60" rx="8" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1.5" filter="url(#shadow1)"/>
+  <text x="90" y="100" text-anchor="middle" fill="#93c5fd" font-size="11" font-weight="bold">Developer</text>
+  <text x="90" y="118" text-anchor="middle" fill="#64748b" font-size="9">git push</text>
+
+  <!-- Arrow -->
+  <line x1="150" y1="105" x2="190" y2="105" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrowBlue)"/>
+  <defs><marker id="arrowBlue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#3b82f6"/></marker></defs>
+
+  <!-- GitHub -->
+  <rect x="195" y="75" width="120" height="60" rx="8" fill="#1a2332" stroke="#6366f1" stroke-width="1.5" filter="url(#shadow1)"/>
+  <text x="255" y="100" text-anchor="middle" fill="#a5b4fc" font-size="11" font-weight="bold">GitHub</text>
+  <text x="255" y="118" text-anchor="middle" fill="#64748b" font-size="9">Webhook Trigger</text>
+
+  <!-- Arrow -->
+  <line x1="315" y1="105" x2="355" y2="105" stroke="#6366f1" stroke-width="2" marker-end="url(#arrowPurple)"/>
+  <defs><marker id="arrowPurple" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#6366f1"/></marker></defs>
+
+  <!-- Jenkins -->
+  <rect x="360" y="65" width="160" height="80" rx="8" fill="#1a2e1a" stroke="#22c55e" stroke-width="1.5" filter="url(#shadow1)"/>
+  <text x="440" y="90" text-anchor="middle" fill="#86efac" font-size="12" font-weight="bold">Jenkins</text>
+  <text x="440" y="108" text-anchor="middle" fill="#64748b" font-size="9">Build + Test</text>
+  <text x="440" y="122" text-anchor="middle" fill="#64748b" font-size="9">Docker Image Build</text>
+  <text x="440" y="136" text-anchor="middle" fill="#64748b" font-size="9">Push to Registry</text>
+
+  <!-- Arrow down from Jenkins -->
+  <line x1="440" y1="145" x2="440" y2="185" stroke="#22c55e" stroke-width="2" marker-end="url(#arrowGreen)"/>
+  <defs><marker id="arrowGreen" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#22c55e"/></marker></defs>
+
+  <!-- Docker Registry -->
+  <rect x="360" y="190" width="160" height="55" rx="8" fill="#2a1a2e" stroke="#a855f7" stroke-width="1.5" filter="url(#shadow1)"/>
+  <text x="440" y="215" text-anchor="middle" fill="#d8b4fe" font-size="11" font-weight="bold">Docker Registry</text>
+  <text x="440" y="232" text-anchor="middle" fill="#64748b" font-size="9">Tagged Images</text>
+
+  <!-- Arrow right from Registry -->
+  <line x1="520" y1="217" x2="580" y2="217" stroke="#a855f7" stroke-width="2" marker-end="url(#arrowViolet)"/>
+  <defs><marker id="arrowViolet" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#a855f7"/></marker></defs>
+
+  <!-- Deployment Stage -->
+  <rect x="585" y="170" width="140" height="55" rx="8" fill="#2e2a1a" stroke="#eab308" stroke-width="1.5" filter="url(#shadow1)"/>
+  <text x="655" y="195" text-anchor="middle" fill="#fde047" font-size="11" font-weight="bold">Staging</text>
+  <text x="655" y="212" text-anchor="middle" fill="#64748b" font-size="9">docker-compose up</text>
+
+  <!-- Arrow down from Staging -->
+  <line x1="655" y1="225" x2="655" y2="260" stroke="#eab308" stroke-width="2" marker-end="url(#arrowYellow)"/>
+  <defs><marker id="arrowYellow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#eab308"/></marker></defs>
+
+  <!-- Health Check -->
+  <rect x="585" y="265" width="140" height="45" rx="8" fill="#1a2e2a" stroke="#14b8a6" stroke-width="1.5" filter="url(#shadow1)"/>
+  <text x="655" y="287" text-anchor="middle" fill="#5eead4" font-size="10" font-weight="bold">Health Check</text>
+  <text x="655" y="302" text-anchor="middle" fill="#64748b" font-size="9">curl /healthz</text>
+
+  <!-- Arrow to Production -->
+  <line x1="655" y1="310" x2="655" y2="340" stroke="#14b8a6" stroke-width="2" marker-end="url(#arrowTeal)"/>
+  <defs><marker id="arrowTeal" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#14b8a6"/></marker></defs>
+
+  <!-- Production -->
+  <rect x="570" y="345" width="170" height="55" rx="8" fill="#2e1a1a" stroke="#ef4444" stroke-width="1.5" filter="url(#shadow1)"/>
+  <text x="655" y="370" text-anchor="middle" fill="#fca5a5" font-size="12" font-weight="bold">Production</text>
+  <text x="655" y="388" text-anchor="middle" fill="#64748b" font-size="9">Nginx Reverse Proxy + SSL</text>
+
+  <!-- Nginx box on right -->
+  <rect x="760" y="345" width="120" height="55" rx="8" fill="#1e293b" stroke="#f97316" stroke-width="1.5" filter="url(#shadow1)"/>
+  <text x="820" y="368" text-anchor="middle" fill="#fdba74" font-size="10" font-weight="bold">Nginx</text>
+  <text x="820" y="383" text-anchor="middle" fill="#64748b" font-size="9">Blue-Green</text>
+  <text x="820" y="395" text-anchor="middle" fill="#64748b" font-size="9">Swap</text>
+
+  <!-- Arrow from prod to nginx -->
+  <line x1="740" y1="372" x2="758" y2="372" stroke="#f97316" stroke-width="2" marker-end="url(#arrowOrange)"/>
+  <defs><marker id="arrowOrange" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#f97316"/></marker></defs>
+
+  <!-- Monitoring bottom left -->
+  <rect x="30" y="310" width="180" height="80" rx="8" fill="#1e293b" stroke="#64748b" stroke-width="1" stroke-dasharray="4"/>
+  <text x="120" y="335" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="bold">Monitoring</text>
+  <text x="120" y="355" text-anchor="middle" fill="#64748b" font-size="9">Prometheus + Grafana</text>
+  <text x="120" y="370" text-anchor="middle" fill="#64748b" font-size="9">Slack Alerts</text>
+  <text x="120" y="385" text-anchor="middle" fill="#64748b" font-size="9">Log Aggregation</text>
+
+  <!-- Rollback note -->
+  <rect x="250" y="310" width="160" height="55" rx="8" fill="#1e293b" stroke="#64748b" stroke-width="1" stroke-dasharray="4"/>
+  <text x="330" y="335" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="bold">Rollback Strategy</text>
+  <text x="330" y="355" text-anchor="middle" fill="#64748b" font-size="9">docker tag :previous</text>
+  <text x="330" y="370" text-anchor="middle" fill="#64748b" font-size="9">&lt; 30s recovery time</text>
+</svg>

@@ -1,0 +1,21 @@
+# secrets and local state
+.env
+.env.local
+*.pem
+*.key
+
+# terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+.terraform.lock.hcl
+
+# editors / OS
+.DS_Store
+.vscode/
+.idea/
+
+# logs / temp
+*.log
+*.tmp
+tmp/
